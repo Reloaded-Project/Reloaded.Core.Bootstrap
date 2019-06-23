@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Header Files\core-setup">
+      <UniqueIdentifier>{0a4ee89c-689e-404f-90cf-7dab64b107c0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\project-template">
+      <UniqueIdentifier>{7635ecd4-4d9b-438c-8d90-1f515bc70f0d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\project-template">
+      <UniqueIdentifier>{088f2ff1-d9f9-4461-8c24-31c1ffd3d7f8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\nethost">
+      <UniqueIdentifier>{d7ac0fc8-5ea1-4759-af58-cc04f1eb3535}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\nethost\x64">
+      <UniqueIdentifier>{fd5aabf8-e7f3-4be7-b7a9-47cff872dfe2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\nethost\x86">
+      <UniqueIdentifier>{7fa8ce8f-dac7-429e-9b42-29806eec32aa}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CoreCLR.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="pch.h">
+      <Filter>Header Files\project-template</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Header Files\project-template</Filter>
+    </ClInclude>
+    <ClInclude Include="framework.h">
+      <Filter>Header Files\project-template</Filter>
+    </ClInclude>
+    <ClInclude Include="Nethost\x64\nethost.h">
+      <Filter>Header Files\nethost\x64</Filter>
+    </ClInclude>
+    <ClInclude Include="Nethost\x86\nethost.h">
+      <Filter>Header Files\nethost\x86</Filter>
+    </ClInclude>
+    <ClInclude Include="core-setup\coreclr_delegates.h">
+      <Filter>Header Files\core-setup</Filter>
+    </ClInclude>
+    <ClInclude Include="core-setup\hostfxr.h">
+      <Filter>Header Files\core-setup</Filter>
+    </ClInclude>
+    <ClInclude Include="nethost\nethost.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="CoreCLR.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="dllmain.cpp">
+      <Filter>Source Files\project-template</Filter>
+    </ClCompile>
+    <ClCompile Include="pch.cpp">
+      <Filter>Source Files\project-template</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="nethost\x86\nethost.lib">
+      <Filter>Header Files\nethost\x86</Filter>
+    </Library>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="nethost\x64\nethost.lib">
+      <Filter>Header Files\nethost\x64</Filter>
+    </CustomBuild>
+  </ItemGroup>
+</Project>
