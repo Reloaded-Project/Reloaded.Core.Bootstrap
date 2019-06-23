@@ -1,6 +1,6 @@
 # Reloaded.Core.Bootstrap
 
-Reloaded.Core.Bootstrap is a tiny Visual C++ library that allows you to inject CoreCLR (the .NET Core Runtime) into the current unmanaged process and execute a .NET library.
+Reloaded.Core.Bootstrap is a tiny Visual C++ library wrapping the `nethost` library that allows you to inject CoreCLR (the .NET Core Runtime) into the current unmanaged process and execute a .NET library.
 
 ## Requirements
 
@@ -14,6 +14,10 @@ Reloaded.Core.Bootstrap is a tiny Visual C++ library that allows you to inject C
 Logically, the x86 runtime is necessary to host CoreCLR in an x86 process and the x64 runtime is necessary to run CoreCLR in an x64 process.
 
 The "Hosting Bundle" contains both the x86 and x64 runtime.
+
+## Example Usage
+
+See the Visual Studio solution file under the `Source` directory, it contains a usage example from both the native C++ and managed C# side.
 
 ## How does it work (Summary)
 
