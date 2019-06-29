@@ -21,10 +21,10 @@
     <Filter Include="Header Files\nethost">
       <UniqueIdentifier>{d7ac0fc8-5ea1-4759-af58-cc04f1eb3535}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\nethost\x64">
+    <Filter Include="Header Files\nethost\x64-libs">
       <UniqueIdentifier>{fd5aabf8-e7f3-4be7-b7a9-47cff872dfe2}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\nethost\x86">
+    <Filter Include="Header Files\nethost\x86-libs">
       <UniqueIdentifier>{7fa8ce8f-dac7-429e-9b42-29806eec32aa}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -40,12 +40,6 @@
     </ClInclude>
     <ClInclude Include="framework.h">
       <Filter>Header Files\project-template</Filter>
-    </ClInclude>
-    <ClInclude Include="Nethost\x64\nethost.h">
-      <Filter>Header Files\nethost\x64</Filter>
-    </ClInclude>
-    <ClInclude Include="Nethost\x86\nethost.h">
-      <Filter>Header Files\nethost\x86</Filter>
     </ClInclude>
     <ClInclude Include="core-setup\coreclr_delegates.h">
       <Filter>Header Files\core-setup</Filter>
@@ -69,13 +63,11 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <Library Include="nethost\x86\nethost.lib">
-      <Filter>Header Files\nethost\x86</Filter>
+    <Library Include="nethost\x86-libs\nethost.lib">
+      <Filter>Header Files\nethost\x86-libs</Filter>
     </Library>
-  </ItemGroup>
-  <ItemGroup>
-    <CustomBuild Include="nethost\x64\nethost.lib">
-      <Filter>Header Files\nethost\x64</Filter>
-    </CustomBuild>
+    <Library Include="nethost\x64-libs\nethost.lib" >
+        <Filter>Header Files\nethost\x64-libs</Filter>
+    </Library>
   </ItemGroup>
 </Project>

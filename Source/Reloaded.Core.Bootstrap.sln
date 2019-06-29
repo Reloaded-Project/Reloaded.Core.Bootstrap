@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 16.0.29006.145
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Reloaded.Core.Bootstrap.Example", "Reloaded.Core.Bootstrap.Example\Reloaded.Core.Bootstrap.Example.vcxproj", "{41AD91BE-6D90-45DE-8A80-2A72DE4A6B40}"
+	ProjectSection(ProjectDependencies) = postProject
+		{29469C33-3AAA-49C9-9581-422A15B6D244} = {29469C33-3AAA-49C9-9581-422A15B6D244}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Reloaded.Core.Bootstrap", "Reloaded.Core.Bootstrap\Reloaded.Core.Bootstrap.vcxproj", "{992AB7A3-F0C7-4276-B83C-380D99F5F9E9}"
 EndProject

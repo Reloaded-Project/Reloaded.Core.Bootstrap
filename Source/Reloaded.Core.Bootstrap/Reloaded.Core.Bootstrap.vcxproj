@@ -103,7 +103,7 @@
       <EnableUAC>false</EnableUAC>
     </Link>
     <Lib>
-      <AdditionalLibraryDirectories>.\nethost\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>.\nethost\x86-libs;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
     </Lib>
     <PostBuildEvent>
@@ -128,7 +128,7 @@
       <EnableUAC>false</EnableUAC>
     </Link>
     <Lib>
-      <AdditionalLibraryDirectories>.\nethost\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>.\nethost\x64-libs;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
     </Lib>
     <PostBuildEvent>
@@ -157,7 +157,7 @@
       <EnableUAC>false</EnableUAC>
     </Link>
     <Lib>
-      <AdditionalLibraryDirectories>.\nethost\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>.\nethost\x86-libs;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
     </Lib>
     <PostBuildEvent>
@@ -186,7 +186,7 @@
       <EnableUAC>false</EnableUAC>
     </Link>
     <Lib>
-      <AdditionalLibraryDirectories>.\nethost\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>.\nethost\x64-libs;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
     </Lib>
     <PostBuildEvent>
@@ -200,8 +200,6 @@
     <ClInclude Include="CoreCLR.hpp" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="nethost\nethost.h" />
-    <ClInclude Include="Nethost\x64\nethost.h" />
-    <ClInclude Include="Nethost\x86\nethost.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="resource.h" />
   </ItemGroup>
@@ -219,26 +217,26 @@
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
   <ItemGroup>
-    <ContentWithTargetPath Include="nethost/x64/nethost.dll" Condition="'$(Platform)'=='x64'">
+    <ContentWithTargetPath Include="nethost/x64-libs/nethost.dll" Condition="'$(Platform)'=='x64'">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <TargetPath>nethost.dll</TargetPath>
     </ContentWithTargetPath>
   </ItemGroup>
   <ItemGroup>
-    <ContentWithTargetPath Include="nethost/x86/nethost.dll" Condition="'$(Platform)'=='Win32'">
+    <ContentWithTargetPath Include="nethost/x86-libs/nethost.dll" Condition="'$(Platform)'=='Win32'">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <TargetPath>nethost.dll</TargetPath>
     </ContentWithTargetPath>
   </ItemGroup>
   <ItemGroup>
-    <Library Include="nethost\x64\nethost.lib">
+    <Library Include="nethost\x64-libs\nethost.lib">
       <FileType>Document</FileType>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
     </Library>
-    <Library Include="nethost\x86\nethost.lib">
+    <Library Include="nethost\x86-libs\nethost.lib">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
