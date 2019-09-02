@@ -32,7 +32,7 @@ For a more comprehensive description, refer to the official guide for .NET Core 
 
 ## Operating System Support
 
-Like the other libraries in this organization, this library was made with Reloaded (Mod Loader) II in mind and thus provides a Windows-only implementation.
+Like the other libraries in this organization, this library was made with [Reloaded II](https://github.com/Reloaded-Project/Reloaded-II) in mind and thus provides a Windows-only implementation.
 
 That said it is very easy to extend this to Linux and OSX with less than 50 lines of code. I, the author just lack the resources (time) to learn alternative tooling/build systems *(CMake/Premake etc.)* and make a solution that can be built and tested on more platforms.
 
@@ -42,8 +42,8 @@ That said it is very easy to extend this to Linux and OSX with less than 50 line
 
 It means that you are probably building a class library project (as opposed to console application) that you would like to execute.
 
-To generate the config for a class library project, simply add
-`<GenerateRuntimeConfigurationFiles>true</GenerateRuntimeConfigurationFiles>`  to the first property group of your .NET project's `.csproj` files.
+To generate the config for a class library project, enable dynamic loading by adding
+`<EnableDynamicLoading>true</EnableDynamicLoading>`  to the first property group of your .NET project's `.csproj` files.
 
 ## Additional Licenses
 
