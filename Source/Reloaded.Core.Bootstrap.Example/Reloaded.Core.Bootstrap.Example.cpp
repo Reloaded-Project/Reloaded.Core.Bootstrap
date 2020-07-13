@@ -15,40 +15,53 @@ string_t get_current_directory();
 bool file_exists(string_t file_path);
 int exit(const char* message);
 
+// Second thread instance.
+HANDLE initializeThreadHandle;
+DWORD WINAPI load_bootstrapper_async(LPVOID lpParam);
+
 // Rest of code.
 int main(int argc, char* argv[])
+{
+	initializeThreadHandle = CreateThread(nullptr, 0, &load_bootstrapper_async, 0, 0, nullptr);
+	WaitForSingleObject(initializeThreadHandle, INFINITE);
+	Sleep(INFINITE);
+}
+
+DWORD WINAPI load_bootstrapper_async(LPVOID lpParam)
 {
 	int success = 0;
 	CLR = new CoreCLR(&success);
 
-	if (! success)
+	if (!success)
 		return exit("Failed to load `hostfxr`");
-		
+
 	// Get file paths and verify them.
 	const string_t current_directory = get_current_directory();
 	const string_t runtime_config_path = current_directory + L"Reloaded.Core.Bootstrap.ExampleDll.runtimeconfig.json";
 
 	if (!file_exists(runtime_config_path))
 		return exit("The runtime configuration does not exist. Ensure you have compiled the Reloaded.Core.Bootstrap.ExampleDll project.");
-		
+
 	// Load runtime and execute our method.
-	if (! CLR->load_runtime(runtime_config_path))
+	if (!CLR->load_runtime(runtime_config_path))
 		return exit("Failed to load .NET Core Runtime");
 
 	const string_t assembly_path = current_directory + L"Reloaded.Core.Bootstrap.ExampleDll.dll";
 	const string_t type_name = L"Reloaded.Core.Bootstrap.ExampleDll.Hello, Reloaded.Core.Bootstrap.ExampleDll";
 	const string_t method_name = L"SayHello";
-	
+
 	const string_t hello_message = L"Hello NET Core from C++";
 	component_entry_point_fn say_hello = nullptr;
 
-	if (!CLR->load_assembly_and_get_function_pointer(assembly_path.c_str(), type_name.c_str(), method_name.c_str(), 
+	if (!CLR->load_assembly_and_get_function_pointer(assembly_path.c_str(), type_name.c_str(), method_name.c_str(),
 		nullptr, nullptr, (void**)&say_hello))
 
 		return exit("Failed to load C# assembly.");
 
 	int message_size = hello_message.length();
 	say_hello((void*)hello_message.c_str(), message_size);
+
+	return 0;
 }
 
 bool file_exists(string_t file_path)
