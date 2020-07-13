@@ -26,9 +26,9 @@ namespace Reloaded.Core.Bootstrap.ExampleDll
             switch (IntPtr.Size)
             {
                 case 4:
-                    return "x86";
+                    return "x86 (or other 32-bit)";
                 case 8:
-                    return "x64";
+                    return "x64 (or other 64-bit)";
                 default:
                     return "The future is now";
             }
